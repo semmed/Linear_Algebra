@@ -8,6 +8,8 @@ from IPython.display import Latex as lt
 from IPython.display import display, Math
 import numpy as np
 
+
+
 def display_matrix(matrix):
     data = ''
     for line in matrix:
@@ -36,8 +38,8 @@ def latex_matrix(matrix):
             data += ' %.4f&' % element
         data += ' %.4f' % line[-1]
         data += r'\\' + '\n'
-    print('\\begin{bmatrix} \n%s\end{bmatrix}' % data)
-    
+    return('\\begin{bmatrix} \n%s\end{bmatrix}' % data)
+
 def display_tensor(tensor):
     if tensor.ndim <= 2:
         display_matrix(tensor)
